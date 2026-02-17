@@ -1,8 +1,7 @@
 import Counter from '../Counter';
-import WidgetContext from '../WidgetContext';
 
 export default {
-  title: 'Counter',
+  title: 'Components/Counter',
   args: {
     // Every Merkur story must have defined props property
     widget: {
@@ -12,11 +11,7 @@ export default {
 };
 
 const Template = (args, { loaded: { widget } }) => {
-  return (
-    <WidgetContext.Provider value={widget}>
-      <Counter counter={widget.state.counter} />
-    </WidgetContext.Provider>
-  );
+  return <Counter counter={widget.state.counter} />;
 };
 
 export const DefaultCounter = Template.bind({});

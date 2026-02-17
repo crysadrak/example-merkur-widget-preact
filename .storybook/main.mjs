@@ -5,6 +5,9 @@ const config = {
     disableTelemetry: true,
     disableWhatsNewNotifications: true,
   },
+  features: {
+    onboarding: false,
+  },
   framework: {
     name: '@storybook/preact-vite',
     options: {},

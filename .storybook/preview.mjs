@@ -1,26 +1,20 @@
-import { h, render } from 'preact';
 import { createPreviewConfig } from '@merkur/tool-storybook';
 import widgetProperties from '../src/widget.js';
-import View from '../src/views/View.jsx';
-import HeadlineSlot from '../src/slots/HeadlineSlot.jsx';
+import { decorators } from './decorators.jsx';
+import '../src/style.css';
 
-// Create preview configuration with Merkur widget support
 const preview = {
-    ...createPreviewConfig({
-        widgetProperties,
-    }),
-    // Preact render function
-    render: (args, { loaded: { widget }, viewMode }) => {
-        if (!widget) {
-            return document.createElement('div');
-        }
-
-        const container = document.createElement('div');
-        const ViewComponent = args.viewComponent === 'headline' ? HeadlineSlot : View;
-        render(h(ViewComponent, widget), container);
-
-        return container;
+  ...createPreviewConfig({
+    widgetProperties,
+    render(widget) {
+      // This is called by the widget's update lifecycle
+      // Trigger the forceUpdate stored on the widget by the decorator
+      if (widget?.$in?._storybookForceUpdate) {
+        widget.$in._storybookForceUpdate();
+      }
     },
+  }),
+  decorators,
 };
 
 export default preview;
