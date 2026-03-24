@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Widget should return merkur JSON structure for widget 1`] = `
+{
+  "containerSelector": null,
+  "error": {
+    "message": null,
+    "status": null,
+  },
+  "html": "<div class="merkur__page"><div class="merkur__view"><div><h3>Counter widget:</h3><p>Count: 0</p><button>increase counter</button><button>reset counter</button></div></div></div>",
+  "name": "merkur-widget-preact",
+  "props": {
+    "environment": {
+      "apiUrl": "https://api.github.dev/",
+    },
+  },
+  "slot": {
+    "headline": {
+      "html": "<div class="merkur__headline"><div class="merkur__view"><div><h1><a href="https://github.com/mjancarik/merkur">MERKUR</a></h1><h2>a tiny extensible javascript library for front-end microservices</h2></div><h3>Current count: 0</h3><p>The widget's name is <strong>merkur-widget-preact@0.0.1</strong>.</p></div></div>",
+      "name": "headline",
+    },
+  },
+  "state": {
+    "counter": 0,
+  },
+  "version": "0.0.1",
+}
+`;

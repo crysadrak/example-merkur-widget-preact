@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View should display main view 1`] = `
+"[36m<div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"merkur__page"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"merkur__view"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h3>[39m
+          [0mCounter widget:[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mCount: [0m
+          [0m0[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mincrease counter[0m
+        [36m</button>[39m
+        [36m<button>[39m
+          [0mreset counter[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</div>[39m"
+`;
+
+exports[`View should increase counter 1`] = `
+"[36m<div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"merkur__page"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"merkur__view"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<h3>[39m
+          [0mCounter widget:[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mCount: [0m
+          [0m1[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mincrease counter[0m
+        [36m</button>[39m
+        [36m<button>[39m
+          [0mreset counter[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</div>[39m"
+`;
