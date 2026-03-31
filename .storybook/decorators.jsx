@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
+
 import WidgetContext from '../src/components/WidgetContext';
 
 export const decorators = [
@@ -6,10 +7,20 @@ export const decorators = [
     const [, forceUpdate] = useState(0);
 
     useEffect(() => {
-      if (widget && widget.$in) {
-        // Store the forceUpdate function on the widget so the render callback can trigger it
-        widget.$in._storybookForceUpdate = () => forceUpdate((n) => n + 1);
+      if (!widget?.$external) {
+        return undefined;
       }
+
+      widget.$external.storybook = {
+        // Provide a way for the render callback to trigger a re-render after syncing state/props back to the Controls panel.
+        forceUpdate: () => forceUpdate((n) => n + 1),
+      };
+
+      return () => {
+        if (widget.$external?.storybook) {
+          delete widget.$external.storybook;
+        }
+      };
     }, [widget]);
 
     return (
